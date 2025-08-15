@@ -1,0 +1,372 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gerardo Barragán — Desarrollo Web, Móvil e IA</title>
+  <meta name="description" content="Ingeniero en Computación con Maestría en IA. Desarrollo web, apps móviles (PWA), dashboards, automatización de datos y soluciones con IA/visión por computadora. Integraciones con Microsoft 365 y ERP Business Central. Monterrey, MX." />
+  <meta property="og:title" content="Gerardo Barragán — Desarrollo Web, Móvil e IA" />
+  <meta property="og:description" content="Construyo soluciones web, móviles y de IA para PyMEs y manufactura: dashboards, ETL, chatbots, visión por computadora, integraciones M365/Business Central." />
+  <meta name="theme-color" content="#0ea5e9" />
+  <style>
+    :root{
+      --bg:#f8fafc; --text:#0f172a; --muted:#475569; --border:#e2e8f0; --card:#ffffff;
+      --brand:#0ea5e9; --brand-2:#0284c7; --ring:rgba(14,165,233,.2); --ok:#16a34a; --danger:#dc2626;
+      --shadow:0 10px 20px rgba(2,6,23,.06),0 2px 6px rgba(2,6,23,.04); --radius:18px;
+    }
+    *{box-sizing:border-box} html,body{height:100%}
+    body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,Helvetica Neue,Arial; color:var(--text); background:linear-gradient(to bottom,var(--bg),#fff)}
+    a{color:inherit;text-decoration:none}
+    .container{max-width:1200px;margin:0 auto;padding:0 1rem}
+    .btn{display:inline-flex;align-items:center;gap:.5rem;background:var(--brand);color:#fff;border:none;border-radius:999px;padding:.8rem 1rem;font-weight:700;box-shadow:var(--shadow);cursor:pointer}
+    .btn:hover,.btn:focus{background:var(--brand-2)}
+    .btn-outline{background:transparent;color:var(--text);border:1px solid var(--border)}
+    .btn-outline:hover{border-color:var(--brand);color:var(--brand)}
+    .badge{display:inline-flex;align-items:center;gap:.4rem;color:#334155;font-size:.9rem}
+    header.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.75);backdrop-filter:saturate(180%) blur(8px);border-bottom:1px solid var(--border)}
+    .nav-inner{height:64px;display:flex;align-items:center;justify-content:space-between}
+    .nav-logo{display:flex;align-items:center;gap:.6rem;font-weight:800}
+    .nav-logo .tag{display:none;border:1px solid var(--border);padding:.15rem .5rem;border-radius:999px;font-weight:700;color:#0369a1}
+    .nav-links{display:flex;gap:1.2rem} .mobile-toggle{display:none}
+    @media (max-width:860px){.nav-links{display:none}.mobile-toggle{display:inline-flex}.nav-logo .tag{display:inline-flex}}
+    .mobile-menu{display:none;border-top:1px solid var(--border);padding:.75rem 0}
+    .mobile-menu a{display:block;padding:.5rem 0}
+
+    .grid{display:grid;gap:1.2rem}
+    .section{padding:3rem 0}
+    .h1{font-size:clamp(2rem,3.4vw + 1rem,3.2rem);line-height:1.12;margin:.2rem 0}
+    .lead{font-size:1.12rem;color:#334155;margin:1rem 0 1.2rem}
+    .muted{color:var(--muted)}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow)}
+    .card-body{padding:1.1rem}
+
+    .hero{padding:3rem 0 2rem}
+    .hero-grid{grid-template-columns:1.1fr 1fr;align-items:center}
+    @media (max-width:980px){.hero-grid{grid-template-columns:1fr}}
+
+    .features{grid-template-columns:repeat(3,1fr)}
+    .services{grid-template-columns:repeat(3,1fr)}
+    .portfolio{grid-template-columns:repeat(3,1fr)}
+    .process{grid-template-columns:repeat(4,1fr)}
+    .faq{grid-template-columns:repeat(2,1fr)}
+    @media (max-width:1024px){
+      .features,.services,.portfolio{grid-template-columns:repeat(2,1fr)}
+      .process{grid-template-columns:repeat(2,1fr)}
+      .faq{grid-template-columns:1fr}
+    }
+
+    .pill{display:inline-flex;align-items:center;gap:.5rem;background:#e0f2fe;color:#075985;border-radius:999px;padding:.35rem .6rem;font-size:.85rem;font-weight:700}
+    .taglist{display:flex;gap:.5rem;flex-wrap:wrap}
+    .tag{border:1px solid var(--border);border-radius:999px;padding:.25rem .55rem;font-size:.82rem;color:#0f172a;background:#fff}
+
+    .price-grid{grid-template-columns:repeat(3,1fr)}
+    .price .head{display:flex;align-items:center;justify-content:space-between}
+    .price.highlight{outline:2px solid var(--brand);box-shadow:0 0 0 8px var(--ring)}
+    .price ul{list-style:none;margin:0;padding:0;display:grid;gap:.6rem}
+
+    details{border:1px solid var(--border);border-radius:var(--radius);padding:.9rem 1rem;background:#fff}
+    details+details{margin-top:.9rem} summary{cursor:pointer;font-weight:700}
+
+    footer{border-top:1px solid var(--border);padding:2rem 0}
+    .footer-row{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;color:#64748b}
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+  </style>
+</head>
+<body>
+  <!-- NAV -->
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="nav-logo" href="#top" aria-label="Inicio">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 4h7v7H4V4Zm9 0h7v7h-7V4ZM4 13h7v7H4v-7Zm9 5h7" stroke="#0f172a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>Gerardo Barragán</span>
+        <span class="tag">Web · Móvil · IA</span>
+      </a>
+      <nav class="nav-links" aria-label="Secciones">
+        <a href="#servicios">Servicios</a>
+        <a href="#portafolio">Portafolio</a>
+        <a href="#proceso">Proceso</a>
+        <a href="#precios">Paquetes</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+      <button class="btn mobile-toggle" aria-expanded="false" aria-controls="mobile-menu" title="Abrir menú">Menú</button>
+      <a class="btn" href="mailto:gerardobarraganglez@gmail.com?subject=Quiero%20trabajar%20contigo"><span>Hablemos</span></a>
+    </div>
+    <div id="mobile-menu" class="container mobile-menu" aria-hidden="true">
+      <a href="#servicios">Servicios</a>
+      <a href="#portafolio">Portafolio</a>
+      <a href="#proceso">Proceso</a>
+      <a href="#precios">Paquetes</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contacto">Contacto</a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section id="top" class="section hero container">
+    <div class="grid hero-grid">
+      <div>
+        <span class="pill">Carta de presentación</span>
+        <h1 class="h1">Construyo soluciones <u>web</u>, <u>móviles</u> y de <u>IA</u> que aterrizan valor en días</h1>
+        <p class="lead">Ingeniero en Ciencias Computacionales con Maestría en IA. Experto en <strong>Python</strong> (Streamlit/FastAPI), <strong>PHP</strong>/MySQL, <strong>JavaScript</strong> (D3.js, amCharts) e integraciones con <strong>Microsoft 365</strong> y <strong>Business Central</strong>. Trabajo con PyMEs y manufactura para transformar Excels y procesos en productos reales.</p>
+        <div style="display:flex;gap:.8rem;flex-wrap:wrap">
+          <a href="#servicios" class="btn">Ver servicios</a>
+          <a class="btn btn-outline" href="mailto:gerardobarraganglez@gmail.com?subject=Diagn%C3%B3stico%20gratuito&body=Hola%20Gerardo%2C%20quiero%20agendar%20un%20diagn%C3%B3stico%20de%2030%20min%20sobre%20mi%20proyecto.">Agendar diagnóstico</a>
+        </div>
+        <div class="taglist" style="margin-top:1rem">
+          <span class="tag">On‑prem / Nube económica</span>
+          <span class="tag">Privacidad de datos</span>
+          <span class="tag">Paquetes cerrados</span>
+          <span class="tag">Entrega 5–7 días (típico)</span>
+        </div>
+      </div>
+      <div class="card"><div class="card-body">
+        <h3 style="margin:.2rem 0 1rem">¿Qué puedo construir para ti?</h3>
+        <div class="grid features" style="gap:.8rem">
+          <div class="card"><div class="card-body"><strong>Dashboards operativos</strong><p class="muted">KPIs de producción, merma, eficiencia y calidad con filtros por planta/línea/turno.</p></div></div>
+          <div class="card"><div class="card-body"><strong>Apps con IA</strong><p class="muted">Extracción de datos de PDFs, clasificación, asistentes y RAG local con Ollama.</p></div></div>
+          <div class="card"><div class="card-body"><strong>Automatización</strong><p class="muted">ETL en Python, validación de catálogos, Office/Excel Scripts y reportes.</p></div></div>
+        </div>
+      </div></div>
+  </section>
+
+  <!-- SERVICIOS -->
+  <section id="servicios" class="section">
+    <div class="container">
+      <h2 style="margin:0 0 .25rem">Servicios</h2>
+      <p class="muted">Diseñados para resolver rápido y con impacto medible.</p>
+      <div class="grid services" style="margin-top:1rem">
+        <div class="card"><div class="card-body">
+          <strong>Desarrollo web</strong>
+          <p class="muted">Sistemas a la medida en PHP/JS/Python: módulos CRUD, roles/permisos, APIs, exportables PDF/Excel, componentes visuales con D3.js y amCharts.</p>
+          <div class="taglist"><span class="tag">PHP</span><span class="tag">MySQL</span><span class="tag">JavaScript</span><span class="tag">D3.js</span><span class="tag">amCharts</span></div>
+        </div></div>
+        <div class="card"><div class="card-body">
+          <strong>Apps móviles (PWA)</strong>
+          <p class="muted">Aplicaciones web móviles y progresivas: offline básico, notificaciones y acceso desde el home del teléfono. Opcional: empaquetado híbrido.</p>
+          <div class="taglist"><span class="tag">PWA</span><span class="tag">Responsive</span><span class="tag">Híbridas</span></div>
+        </div></div>
+        <div class="card"><div class="card-body">
+          <strong>Apps con IA</strong>
+          <p class="muted">NLP y visión por computadora: extracción de campos de PDFs a JSON/DB, validación inteligente, clasificación de documentos y detección de objetos (EPP, fuego/humo).</p>
+          <div class="taglist"><span class="tag">Python</span><span class="tag">OpenCV</span><span class="tag">YOLO</span><span class="tag">Ollama</span></div>
+        </div></div>
+        <div class="card"><div class="card-body">
+          <strong>Chatbots y asistentes</strong>
+          <p class="muted">Bots para web y entorno de trabajo (Microsoft 365/Teams*). Resumen de correos, tareas Planner, acceso a calendario y ayuda operativa.</p>
+          <p class="muted" style="font-size:.85rem">*Sin permisos de administrador, priorizando integraciones abiertas y on‑prem.</p>
+          <div class="taglist"><span class="tag">FastAPI</span><span class="tag">Streamlit</span><span class="tag">Graph API*</span></div>
+        </div></div>
+        <div class="card"><div class="card-body">
+          <strong>Dashboards & BI</strong>
+          <p class="muted">KPI Express: carga de Excel/CSV o conexión a BD, metas, alertas por correo y export a PDF/Excel. Diseño listo para dirección.</p>
+          <div class="taglist"><span class="tag">Streamlit</span><span class="tag">Pandas</span><span class="tag">Export PDF/Excel</span></div>
+        </div></div>
+        <div class="card"><div class="card-body">
+          <strong>Automatización & Datos</strong>
+          <p class="muted">ETL express, limpieza y validación de datos, conciliación de catálogos, calidad de datos y reportes automáticos.</p>
+          <div class="taglist"><span class="tag">Python</span><span class="tag">Pydantic</span><span class="tag">Office 365</span></div>
+        </div></div>
+        <div class="card"><div class="card-body">
+          <strong>Integraciones</strong>
+          <p class="muted">Microsoft 365 (correo, Planner, calendario), ERP Business Central y servicios de correo (PHPMailer). Siempre con foco en seguridad.</p>
+          <div class="taglist"><span class="tag">Graph*</span><span class="tag">Business Central</span><span class="tag">PHPMailer</span></div>
+        </div></div>
+        <div class="card"><div class="card-body">
+          <strong>On‑prem & privacidad</strong>
+          <p class="muted">Soluciones locales o en hosting económico, sin depender de nubes propietarias ni permisos de admin. Datos bajo tu control.</p>
+          <div class="taglist"><span class="tag">Docker</span><span class="tag">Seguridad</span><span class="tag">Backups</span></div>
+        </div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PORTAFOLIO -->
+  <section id="portafolio" class="section">
+    <div class="container">
+      <h2 style="margin:0 0 .25rem">Proyectos destacados</h2>
+      <p class="muted">Selección de trabajos y soluciones que he construido o liderado.</p>
+      <div class="grid portfolio" style="margin-top:1rem">
+        <div class="card"><div class="card-body">
+          <strong>KPI Express (manufactura)</strong>
+          <p class="muted">Dashboard de producción/merma/cumplimiento con filtros por planta/línea/turno, metas y export a PDF/Excel.</p>
+          <div class="taglist"><span class="tag">Streamlit</span><span class="tag">MySQL/CSV</span></div>
+        </div></div>
+        <div class="card"><div class="card-body">
+          <strong>Detector de EPP</strong>
+          <p class="muted">Detección de chaleco/casco/mascarilla en tiempo real con cámara IP y alertas por correo.</p>
+          <div class="taglist"><span class="tag">YOLO</span><span class="tag">OpenCV</span></div>
+        </div></div>
+        <div class="card"><div class="card-body">
+          <strong>Fuego y humo</strong>
+          <p class="muted">Sistema de detección de fuego/humo para monitoreo y vínculo con panel de alarma.</p>
+          <div class="taglist"><span class="tag">YOLOv5</span><span class="tag">Bosch*</span></div>
+        </div></div>
+        <div class="card"><div class="card-body">
+          <strong>Clasificador de PDFs → JSON</strong>
+          <p class="muted">Análisis de perfiles de puesto, limpieza/normalización, reconstrucción JSON y guardado en DB. Export a SQL y generación de PDF.</p>
+          <div class="taglist"><span class="tag">Streamlit</span><span class="tag">Ollama</span><span class="tag">TCPDF</span></div>
+        </div></div>
+        <div class="card"><div class="card-body">
+          <strong>Organigrama D3.js</strong>
+          <p class="muted">Org chart moderno tipo tarjeta: búsqueda, pan/zoom, panel de datos y filtros por área.</p>
+          <div class="taglist"><span class="tag">D3.js</span><span class="tag">PHP</span></div>
+        </div></div>
+        <div class="card"><div class="card-body">
+          <strong>Panel de anuncios + galería</strong>
+          <p class="muted">CRUD con imágenes únicas/galería, switches “Activo” y previsualización en modal.</p>
+          <div class="taglist"><span class="tag">PHP</span><span class="tag">MySQL</span></div>
+        </div></div>
+        <div class="card"><div class="card-body">
+          <strong>Recuperación por código</strong>
+          <p class="muted">Flujo seguro: envío de código 6 dígitos por correo, verificación en modal y reseteo de contraseña.</p>
+          <div class="taglist"><span class="tag">PHPMailer</span><span class="tag">Seguridad</span></div>
+        </div></div>
+        <div class="card"><div class="card-body">
+          <strong>VSM interactivo</strong>
+          <p class="muted">Mapa de flujo de valor editable con D3.js: tiempos de ciclo, rendimiento y conexiones.</p>
+          <div class="taglist"><span class="tag">D3.js</span></div>
+        </div></div>
+        <div class="card"><div class="card-body">
+          <strong>Asistente ejecutivo M365</strong>
+          <p class="muted">FastAPI + Streamlit: tareas Planner, autenticación y filtrado. Extensible a correo/calendario.</p>
+          <div class="taglist"><span class="tag">FastAPI</span><span class="tag">Graph*</span></div>
+        </div></div>
+      </div>
+      <p class="muted" style="font-size:.85rem;margin-top:.6rem">*Integraciones referenciales sujetas a capacidades y permisos disponibles.</p>
+    </div>
+  </section>
+
+  <!-- PROCESO -->
+  <section id="proceso" class="section">
+    <div class="container">
+      <h2 style="margin:0 0 .25rem">Proceso</h2>
+      <p class="muted">Transparente, ágil y con entregables útiles desde el día 1.</p>
+      <div class="grid process" style="margin-top:1rem">
+        <div class="card"><div class="card-body"><strong>1. Diagnóstico (30–45 min)</strong><p class="muted">Objetivo, KPIs y alcance. Definimos éxito y restricciones.</p></div></div>
+        <div class="card"><div class="card-body"><strong>2. Datos</strong><p class="muted">Plantilla de carga o conexión de solo lectura. Calidad de datos.</p></div></div>
+        <div class="card"><div class="card-body"><strong>3. Iteración</strong><p class="muted">Demo funcional y ajustes. Entregables parciales semanales.</p></div></div>
+        <div class="card"><div class="card-body"><strong>4. Entrega</strong><p class="muted">Deploy on‑prem o nube económica, guía rápida y soporte.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRECIOS -->
+  <section id="precios" class="section">
+    <div class="container">
+      <h2 style="margin:0 0 .25rem">Paquetes</h2>
+      <p class="muted">Precios cerrados, soporte incluido y opción de horas de mentoring.</p>
+      <div class="grid price-grid" style="margin-top:1rem">
+        <div class="card price"><div class="card-body">
+          <div class="head"><strong>Start</strong><strong>$5,000 MXN</strong></div>
+          <ul>
+            <li>Landing o módulo web base</li>
+            <li>Integración de correo/Excel</li>
+            <li>Soporte 7 días</li>
+          </ul>
+          <a class="btn" style="width:100%;margin-top:1rem" href="mailto:gerardobarraganglez@gmail.com?subject=Paquete%20Start">Elegir Start</a>
+        </div></div>
+        <div class="card price"><div class="card-body">
+          <div class="head"><strong>Pro</strong><strong>$9,000 MXN</strong></div>
+          <ul>
+            <li>Dashboard o app PWA</li>
+            <li>10 KPIs o 2 flujos IA</li>
+            <li>Soporte 10 días</li>
+          </ul>
+          <a class="btn" style="width:100%;margin-top:1rem" href="mailto:gerardobarraganglez@gmail.com?subject=Paquete%20Pro">Elegir Pro</a>
+        </div></div>
+        <div class="card price highlight"><div class="card-body">
+          <div class="head"><strong>Plus</strong><strong>$14,000 MXN</strong></div>
+          <ul>
+            <li>Multi‑planta/usuarios o chatbot</li>
+            <li>Perfiles y permisos</li>
+            <li>Soporte 14 días</li>
+          </ul>
+          <a class="btn" style="width:100%;margin-top:1rem" href="mailto:gerardobarraganglez@gmail.com?subject=Paquete%20Plus">Elegir Plus</a>
+        </div></div>
+      </div>
+      <div class="card" style="margin-top:1rem"><div class="card-body" style="display:flex;gap:1rem;align-items:center;justify-content:space-between;flex-wrap:wrap">
+        <div><strong>Mentoring técnico</strong><p class="muted">2h / 5h / 10h para destrabar Python/IA/ETL/Streamlit/D3.</p></div>
+        <a class="btn btn-outline" href="mailto:gbarragan@trophe.mx?subject=Mentoring%20t%C3%A9cnico">Solicitar horas</a>
+      </div></div>
+    </div>
+  </section>
+
+  <!-- TECNOLOGÍAS -->
+  <section class="section">
+    <div class="container">
+      <h2 style="margin:0 0 .25rem">Tecnologías</h2>
+      <p class="muted">Trabajo con herramientas abiertas y prácticas modernas.</p>
+      <div class="taglist" style="margin-top:.8rem">
+        <span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">Streamlit</span><span class="tag">OpenCV</span><span class="tag">YOLO</span>
+        <span class="tag">PHP</span><span class="tag">MySQL</span><span class="tag">JavaScript</span><span class="tag">D3.js</span><span class="tag">amCharts</span>
+        <span class="tag">Ollama (LLMs locales)</span><span class="tag">Docker</span><span class="tag">Office 365</span><span class="tag">Graph*</span><span class="tag">Business Central*</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="section">
+    <div class="container">
+      <h2 style="margin:0 0 .25rem">FAQ</h2>
+      <div class="grid faq" style="margin-top:1rem">
+        <details open>
+          <summary>¿Trabajas sin Azure/Entra ID?</summary>
+          <p class="muted">Sí. Priorizo soluciones open source y despliegues on‑prem o en nube económica. Cuando es posible, integro con Microsoft 365 usando permisos disponibles.</p>
+        </details>
+        <details>
+          <summary>¿Qué tiempos manejas?</summary>
+          <p class="muted">Depende del alcance. Para MVPs y tableros: típicamente 5–7 días. Proyectos IA/visión: 1–3 semanas.</p>
+        </details>
+        <details>
+          <summary>¿Cómo cuidas la privacidad?</summary>
+          <p class="muted">Datos en tu infraestructura, mínimos accesos (solo lectura), NDAs y logs de auditoría. LLMs locales cuando aplique.</p>
+        </details>
+        <details>
+          <summary>¿Formas de trabajo y cobro?</summary>
+          <p class="muted">Paquetes cerrados con 50% anticipo y 50% contra entrega. Incluye kickoff y cierre; cambios adicionales se cotizan.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section id="contacto" class="section">
+    <div class="container">
+      <div class="card"><div class="card-body" style="display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap">
+        <div>
+          <h3 style="margin:.2rem 0">¿Listo para empezar?</h3>
+          <p class="muted">Cuéntame tu objetivo en 2–3 líneas y te propongo un plan con tiempos y precio fijo.</p>
+        </div>
+        <a class="btn" href="mailto:gerardobarraganglez@gmail.com?subject=Quiero%20trabajar%20contigo&body=Hola%20Gerardo%2C%20este%20es%20mi%20proyecto%3A">Escríbeme</a>
+      </div></div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container footer-row">
+      <p>© <span id="y"></span> Gerardo Barragán · Coordinador de Sistemas y consultor independiente</p>
+      <nav style="display:flex;gap:1rem">
+        <a href="#servicios">Servicios</a>
+        <a href="#portafolio">Portafolio</a>
+        <a href="#proceso">Proceso</a>
+        <a href="#precios">Paquetes</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+    const toggle = document.querySelector('.mobile-toggle');
+    const menu = document.getElementById('mobile-menu');
+    toggle?.addEventListener('click', () => {
+      const open = menu.style.display === 'block';
+      menu.style.display = open ? 'none' : 'block';
+      toggle.setAttribute('aria-expanded', String(!open));
+      menu.setAttribute('aria-hidden', String(open));
+    });
+  </script>
+</body>
+</html>
